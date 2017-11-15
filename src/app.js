@@ -1,3 +1,6 @@
-const greeting = 'Hello World';
+import PageLayout from './components/pageLayout/pageLayout';
 
-console.log(greeting); // eslint-disable-line no-console
+const rootEl = document.getElementById('root');
+const PageLayoutInstance = new PageLayout();
+PageLayoutInstance.setContainer(rootEl);
+PageLayoutInstance.renderToDOM();

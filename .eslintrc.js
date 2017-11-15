@@ -138,6 +138,7 @@ module.exports = {
       'node': {
         'moduleDirectory': [
           'node_modules',
+          './src'
         ],
       },
     },
