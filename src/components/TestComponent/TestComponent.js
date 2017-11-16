@@ -1,7 +1,7 @@
-import styles from './sidebar.css';
+import styles from './TestComponent.scss';
 
 
-class Sidebar {
+class TestComponent {
   constructor() {
     this.container = null;
     this.state = {};
@@ -13,27 +13,26 @@ class Sidebar {
 
   render() {
     return `
-      <div class="${styles.sidebar}" >
-        Sidebar
+      <div class="${styles.testComponent}" >
+        <div> TestComponent </div>
       </div>
     `;
   }
 
-  renderToDOM( el ) {
+  renderToDOM() {
     this.container.innerHTML = this.render();
   }
 
   setupEvents() {
-    console.log('setupEvents');
-    this.container.addEventListener('click', () => {
-      console.log('Sidebar clicked');
+    this.container.addEventListener('click', (event) => {
+      console.log('Clicked');
     });
   }
 }
 
-export default Sidebar;
+export default TestComponent;
 
 // hot reload css explicitely
 if ( module.hot ) {
-  module.hot.accept('./sidebar.css');
+  module.hot.accept('./TestComponent.css');
 }

@@ -1,0 +1,21 @@
+$navHeight: 60px;
+
+.layout {
+  background: #DDD;
+}
+
+.navbar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: $navHeight
+}
+
+.content {
+  position: absolute;
+  top: $navHeight;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}

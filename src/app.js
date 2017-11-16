@@ -1,6 +1,8 @@
-import PageLayout from './components/pageLayout/pageLayout';
+import PageLayout from './components/PageLayout/PageLayout';
+import HomePage from './pages/HomePage/HomePage';
 
-const rootEl = document.getElementById('root');
-const PageLayoutInstance = new PageLayout();
-PageLayoutInstance.setContainer(rootEl);
-PageLayoutInstance.renderToDOM();
+const layout = new PageLayout({
+  Page: HomePage,
+  container: document.getElementById('root'),
+});
+layout.renderToDOM();

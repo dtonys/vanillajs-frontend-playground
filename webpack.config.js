@@ -1,78 +1,78 @@
 const path = require('path');
 const webpack = require('webpack');
+const webpackMerge = require('webpack-merge');
+
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 
+const parts = require('./webpack.parts');
+
 const PATHS = {
   src: path.join(__dirname, 'src'),
-  public: path.join(__dirname, 'public'),
+  publicDist: path.join(__dirname, 'public', 'dist'),
   node_modules: path.join(__dirname, 'node_modules'),
 };
 
-const commonConfig = {
-  entry: {
-    app: [
-      'webpack-hot-middleware/client?path=/__webpack_hmr',
-      path.join( PATHS.src, 'app.js' ),
+const commonConfig = webpackMerge([
+  {
+    output: {
+      path: PATHS.publicDist,
+      filename: 'bundle.js',
+    },
+    plugins: [
+      new HtmlWebpackPlugin({
+        template: PATHS.src + '/index.html',
+      }),
+      new webpack.NamedModulesPlugin(),
+    ],
+    resolve: {
+      modules: [
+        PATHS.node_modules,
+        PATHS.src,
+      ],
+    },
+    resolveLoader: {},
+  },
+  parts.loadJavascript({ include: PATHS.src }),
+]);
+
+// const CleanWebpackPlugin = require('clean-webpack-plugin');
+const productionConfig = webpackMerge([
+  {
+    output: {
+      publicPath: '/dist/',
+    },
+    entry: {
+      app: [
+        path.join( PATHS.src, 'app.js' ),
+      ],
+    },
+  },
+  parts.extractSCSS({}),
+]);
+
+const developmentConfig = webpackMerge([
+  {
+    output: {
+      publicPath: '/',
+    },
+    entry: {
+      app: [
+        'webpack-hot-middleware/client?path=/__webpack_hmr',
+        path.join( PATHS.src, 'app.js' ),
+      ],
+    },
+    plugins: [
+      new webpack.HotModuleReplacementPlugin(),
     ],
   },
-  output: {
-    path: PATHS.public,
-    filename: 'bundle.js',
-    publicPath: '/',
-  },
-  module: {
-    rules: [
-      {
-        test: /\.js$/,
-        // use: [ 'babel-loader' ],
-        use: {
-          loader: 'babel-loader',
-          query: {
-            babelrc: true,
-          },
-        },
-        exclude: /node_modules/,
-      },
-      {
-        test: /\.css$/,
-        use: [
-          {
-            loader: 'style-loader',
-          },
-          {
-            loader: 'css-loader',
-            options: {
-              modules: true,
-              localIdentName: '[name]__[local]',
-            },
-          },
-        ],
-      },
-    ],
-  },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: PATHS.src + '/index.html',
-    }),
-    new webpack.NamedModulesPlugin(),
-    new webpack.HotModuleReplacementPlugin(),
-  ],
-  resolve: {
-    modules: [
-      PATHS.node_modules,
-      PATHS.src,
-    ],
-  },
-  resolveLoader: {},
-};
-const productionConfig = () => commonConfig;
-const developmentConfig = () => commonConfig;
+  parts.loadSCSS({}),
+]);
 
 
 module.exports = ( env ) => {
   if ( env === 'production' ) {
-    return productionConfig();
+    return webpackMerge( commonConfig, productionConfig );
   }
-  return developmentConfig();
+  return webpackMerge( commonConfig, developmentConfig );
 };
