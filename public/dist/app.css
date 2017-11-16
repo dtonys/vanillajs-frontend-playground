@@ -1,0 +1,25 @@
+.PageLayout__layout {
+  background: #DDD; }
+
+.PageLayout__navbar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 60px; }
+
+.PageLayout__content {
+  position: absolute;
+  top: 60px;
+  right: 0;
+  left: 0;
+  bottom: 0; }
+.Navbar__navbar {
+  color: red;
+  background: #EEE;
+  height: 100%;
+  text-align: center;
+  padding: 10px;
+  font-size: 30px; }
+.HomePage__homePage {
+  color: blue; }

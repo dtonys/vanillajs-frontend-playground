@@ -1,7 +1,7 @@
-import styles from './TestComponent.scss';
+import styles from './HomePage.scss';
 
 
-class TestComponent {
+class HomePage {
   constructor() {
     this.container = null;
     this.state = {};
@@ -13,8 +13,8 @@ class TestComponent {
 
   render() {
     return `
-      <div class="${styles.testComponent}" >
-        <div> TestComponent </div>
+      <div class="${styles.homePage}" >
+        <div> HomePage </div>
       </div>
     `;
   }
@@ -25,14 +25,14 @@ class TestComponent {
 
   setupEvents() {
     this.container.addEventListener('click', (event) => {
-      console.log('Clicked');
+      console.log('HomePage Clicked');
     });
   }
 }
 
-export default TestComponent;
+export default HomePage;
 
 // hot reload css explicitely
 if ( module.hot ) {
-  module.hot.accept('./TestComponent.css');
+  module.hot.accept('./HomePage.scss');
 }
