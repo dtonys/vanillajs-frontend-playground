@@ -39,3 +39,5 @@ Experiment ideas:
   - Isomorphic rendering
   - Non trivial authentication and redirection
   - Component styleguide
+  - Redux integration
+
