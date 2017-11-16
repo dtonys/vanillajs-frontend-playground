@@ -27,7 +27,7 @@ Boilerplate for pure JS projects.
     - [ ] Integrate standard `fetch` API
     - [ ] Demonstrate async / await functionality
   - [ ] **Single Page App Routing**
-    - Dynamic import with code splitting
+    - [ ] Dynamic import with code splitting
   - [ ] **Cookie**
     - [ ] Get and set cookie
   - [ ] **DOM Utils**
