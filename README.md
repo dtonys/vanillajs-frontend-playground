@@ -10,7 +10,7 @@ Boilerplate for pure JS projects.
   - [x] **CSS**
     - [x] Local scope css via webpack + css-modules
     - [x] Hot module replacement via explicit `module.hot` opt in
-    - [ ] Sass ( .scss ) integration
+    - [x] Sass ( .scss ) integration
       - [ ] Color variables
       - [ ] Example mixins
     - [ ] Autoprefixer

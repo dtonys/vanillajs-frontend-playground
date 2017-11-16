@@ -12,6 +12,19 @@ if ( process.env.NODE_ENV !== 'production' ) {
   const webpackHotMiddleware = require('webpack-hot-middleware');
   const webpackConfig = require('./webpack.config.js')('development');
   const webpackCompiler = webpack(webpackConfig);
+
+  // HACK(@dtonys): Fix for needless recompilations
+  // https://github.com/webpack/watchpack/issues/25#issuecomment-319292564
+  const timefix = 11000;
+  webpackCompiler.plugin('watch-run', (watching, callback) => {
+    watching.startTime += timefix;
+    callback();
+  });
+  webpackCompiler.plugin('done', (stats) => {
+    stats.startTime -= timefix;
+  });
+
+
   const devMiddlewareInstance = webpackDevMiddleware( webpackCompiler, {
     publicPath: webpackConfig.output.publicPath,
   });

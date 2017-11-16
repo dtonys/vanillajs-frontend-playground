@@ -57,5 +57,5 @@ export default PageLayout;
 
 // hot reload css explicitely
 if ( module.hot ) {
-  module.hot.accept('./pageLayout.scss');
+  module.hot.accept('./PageLayout.scss');
 }

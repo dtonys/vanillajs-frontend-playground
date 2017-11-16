@@ -1,6 +1,9 @@
+@import "~styles/includes.scss";
+
 .navbar {
+  @include black-border;
   color: red;
-  background: #EEE;
+  background: $gray-E;
   height: 100%;
   text-align: center;
   padding: 10px;
