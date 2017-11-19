@@ -105,7 +105,9 @@ const productionConfig = webpackMerge([
   ]),
   parts.attachRevision(),
   parts.generateSourceMaps({ type: 'source-map' }),
-  parts.extractSCSS({}),
+  parts.extractSCSS({
+    cssModules: true,
+  }),
   parts.loadImages({
     options: {
       limit: 15000,
@@ -143,7 +145,9 @@ const developmentConfig = webpackMerge([
     cacheDirectory: PATHS.webpackCache,
   }),
   parts.generateSourceMaps({ type: 'cheap-module-eval-source-map' }),
-  parts.loadSCSS({}),
+  parts.loadSCSS({
+    cssModules: true,
+  }),
   parts.loadImages(),
 ]);
 

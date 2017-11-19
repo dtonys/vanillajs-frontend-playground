@@ -66,7 +66,7 @@ exports.minifyCSS = ({ options } = {}) => ({
   ],
 });
 
-exports.loadSCSS = ({ include, exclude } = {}) => ({
+exports.loadSCSS = ({ include, exclude, cssModules } = {}) => ({
   module: {
     rules: [
       {
@@ -80,7 +80,7 @@ exports.loadSCSS = ({ include, exclude } = {}) => ({
           {
             loader: 'css-loader',
             options: {
-              modules: true,
+              modules: cssModules,
               localIdentName: '[name]__[local]',
             },
           },
@@ -97,7 +97,7 @@ const extractCss = new ExtractTextPlugin({
   filename: '[name].[chunkhash].css',
   allChunks: false,
 });
-exports.extractSCSS = ({ include, exclude } = {}) => ({
+exports.extractSCSS = ({ include, exclude, cssModules } = {}) => ({
   module: {
     rules: [
       {
@@ -109,7 +109,7 @@ exports.extractSCSS = ({ include, exclude } = {}) => ({
             {
               loader: 'css-loader',
               options: {
-                modules: true,
+                modules: cssModules,
                 localIdentName: '[name]__[local]',
               },
             },
