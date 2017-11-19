@@ -54,8 +54,3 @@ class PageLayout {
 }
 
 export default PageLayout;
-
-// hot reload css explicitely
-if ( module.hot ) {
-  module.hot.accept('./PageLayout.scss');
-}

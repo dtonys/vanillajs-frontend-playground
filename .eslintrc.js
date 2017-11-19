@@ -102,6 +102,7 @@ module.exports = {
 
     // eslint-config-airbnb-base/rules/es6.js
     'arrow-body-style': 'off',
+    "arrow-parens": [ "warn", "always" ],
     'no-var': 'warn',
     'object-shorthand': 'off',
     'prefer-arrow-callback': 'warn',

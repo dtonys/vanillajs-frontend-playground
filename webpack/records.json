@@ -1,0 +1,155 @@
+{
+  "html-webpack-plugin for \"index.html\"": [
+    {
+      "modules": {
+        "byIdentifier": {
+          "node_modules/html-webpack-plugin/lib/loader.js!src/index.html": "./node_modules/html-webpack-plugin/lib/loader.js!./src/index.html",
+          "node_modules/lodash/lodash.js": "./node_modules/lodash/lodash.js",
+          "node_modules/webpack/buildin/global.js": "./node_modules/webpack/buildin/global.js",
+          "node_modules/webpack/buildin/module.js": "./node_modules/webpack/buildin/module.js"
+        },
+        "usedIds": {
+          "./node_modules/html-webpack-plugin/lib/loader.js!./src/index.html": "./node_modules/html-webpack-plugin/lib/loader.js!./src/index.html",
+          "./node_modules/lodash/lodash.js": "./node_modules/lodash/lodash.js",
+          "./node_modules/webpack/buildin/global.js": "./node_modules/webpack/buildin/global.js",
+          "./node_modules/webpack/buildin/module.js": "./node_modules/webpack/buildin/module.js"
+        }
+      },
+      "chunks": {
+        "byName": {},
+        "byBlocks": {},
+        "usedIds": {
+          "0": 0
+        }
+      }
+    }
+  ],
+  "extract-text-webpack-plugin node_modules/extract-text-webpack-plugin/dist node_modules/css-loader/index.js??ref--2-2!node_modules/postcss-loader/lib/index.js??ref--2-3!node_modules/fast-sass-loader/lib/index.js!src/pages/HomePage/HomePage.scss": [
+    {
+      "modules": {
+        "byIdentifier": {
+          "node_modules/css-loader/index.js?{\"modules\":true,\"localIdentName\":\"[name]__[local]\"}!node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!node_modules/fast-sass-loader/lib/index.js!src/pages/HomePage/HomePage.scss": "./node_modules/css-loader/index.js?{\"modules\":true,\"localIdentName\":\"[name]__[local]\"}!./node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!./node_modules/fast-sass-loader/lib/index.js!./src/pages/HomePage/HomePage.scss",
+          "node_modules/css-loader/lib/css-base.js": "./node_modules/css-loader/lib/css-base.js"
+        },
+        "usedIds": {
+          "./node_modules/css-loader/index.js?{\"modules\":true,\"localIdentName\":\"[name]__[local]\"}!./node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!./node_modules/fast-sass-loader/lib/index.js!./src/pages/HomePage/HomePage.scss": "./node_modules/css-loader/index.js?{\"modules\":true,\"localIdentName\":\"[name]__[local]\"}!./node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!./node_modules/fast-sass-loader/lib/index.js!./src/pages/HomePage/HomePage.scss",
+          "./node_modules/css-loader/lib/css-base.js": "./node_modules/css-loader/lib/css-base.js"
+        }
+      },
+      "chunks": {
+        "byName": {},
+        "byBlocks": {},
+        "usedIds": {
+          "0": 0
+        }
+      }
+    }
+  ],
+  "extract-text-webpack-plugin node_modules/extract-text-webpack-plugin/dist node_modules/css-loader/index.js??ref--2-2!node_modules/postcss-loader/lib/index.js??ref--2-3!node_modules/fast-sass-loader/lib/index.js!src/components/PageLayout/PageLayout.scss": [
+    {
+      "modules": {
+        "byIdentifier": {
+          "node_modules/css-loader/index.js?{\"modules\":true,\"localIdentName\":\"[name]__[local]\"}!node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!node_modules/fast-sass-loader/lib/index.js!src/components/PageLayout/PageLayout.scss": "./node_modules/css-loader/index.js?{\"modules\":true,\"localIdentName\":\"[name]__[local]\"}!./node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!./node_modules/fast-sass-loader/lib/index.js!./src/components/PageLayout/PageLayout.scss",
+          "node_modules/css-loader/lib/css-base.js": "./node_modules/css-loader/lib/css-base.js"
+        },
+        "usedIds": {
+          "./node_modules/css-loader/index.js?{\"modules\":true,\"localIdentName\":\"[name]__[local]\"}!./node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!./node_modules/fast-sass-loader/lib/index.js!./src/components/PageLayout/PageLayout.scss": "./node_modules/css-loader/index.js?{\"modules\":true,\"localIdentName\":\"[name]__[local]\"}!./node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!./node_modules/fast-sass-loader/lib/index.js!./src/components/PageLayout/PageLayout.scss",
+          "./node_modules/css-loader/lib/css-base.js": "./node_modules/css-loader/lib/css-base.js"
+        }
+      },
+      "chunks": {
+        "byName": {},
+        "byBlocks": {},
+        "usedIds": {
+          "0": 0
+        }
+      }
+    }
+  ],
+  "extract-text-webpack-plugin node_modules/extract-text-webpack-plugin/dist node_modules/css-loader/index.js??ref--2-2!node_modules/postcss-loader/lib/index.js??ref--2-3!node_modules/fast-sass-loader/lib/index.js!src/components/Navbar/Navbar.scss": [
+    {
+      "modules": {
+        "byIdentifier": {
+          "node_modules/css-loader/index.js?{\"modules\":true,\"localIdentName\":\"[name]__[local]\"}!node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!node_modules/fast-sass-loader/lib/index.js!src/components/Navbar/Navbar.scss": "./node_modules/css-loader/index.js?{\"modules\":true,\"localIdentName\":\"[name]__[local]\"}!./node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!./node_modules/fast-sass-loader/lib/index.js!./src/components/Navbar/Navbar.scss",
+          "node_modules/css-loader/lib/css-base.js": "./node_modules/css-loader/lib/css-base.js"
+        },
+        "usedIds": {
+          "./node_modules/css-loader/index.js?{\"modules\":true,\"localIdentName\":\"[name]__[local]\"}!./node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!./node_modules/fast-sass-loader/lib/index.js!./src/components/Navbar/Navbar.scss": "./node_modules/css-loader/index.js?{\"modules\":true,\"localIdentName\":\"[name]__[local]\"}!./node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!./node_modules/fast-sass-loader/lib/index.js!./src/components/Navbar/Navbar.scss",
+          "./node_modules/css-loader/lib/css-base.js": "./node_modules/css-loader/lib/css-base.js"
+        }
+      },
+      "chunks": {
+        "byName": {},
+        "byBlocks": {},
+        "usedIds": {
+          "0": 0
+        }
+      }
+    }
+  ],
+  "modules": {
+    "byIdentifier": {
+      "node_modules/css-loader/index.js?{\"modules\":true,\"localIdentName\":\"[name]__[local]\"}!node_modules/postcss-loader/lib/index.js?{}!node_modules/fast-sass-loader/lib/index.js!src/components/Navbar/Navbar.scss": "./node_modules/css-loader/index.js?{\"modules\":true,\"localIdentName\":\"[name]__[local]\"}!./node_modules/postcss-loader/lib/index.js?{}!./node_modules/fast-sass-loader/lib/index.js!./src/components/Navbar/Navbar.scss",
+      "node_modules/css-loader/index.js?{\"modules\":true,\"localIdentName\":\"[name]__[local]\"}!node_modules/postcss-loader/lib/index.js?{}!node_modules/fast-sass-loader/lib/index.js!src/components/PageLayout/PageLayout.scss": "./node_modules/css-loader/index.js?{\"modules\":true,\"localIdentName\":\"[name]__[local]\"}!./node_modules/postcss-loader/lib/index.js?{}!./node_modules/fast-sass-loader/lib/index.js!./src/components/PageLayout/PageLayout.scss",
+      "node_modules/css-loader/index.js?{\"modules\":true,\"localIdentName\":\"[name]__[local]\"}!node_modules/postcss-loader/lib/index.js?{}!node_modules/fast-sass-loader/lib/index.js!src/pages/HomePage/HomePage.scss": "./node_modules/css-loader/index.js?{\"modules\":true,\"localIdentName\":\"[name]__[local]\"}!./node_modules/postcss-loader/lib/index.js?{}!./node_modules/fast-sass-loader/lib/index.js!./src/pages/HomePage/HomePage.scss",
+      "node_modules/css-loader/lib/css-base.js": "./node_modules/css-loader/lib/css-base.js",
+      "node_modules/custom-event/index.js": "./node_modules/custom-event/index.js",
+      "node_modules/dom-serialize/index.js": "./node_modules/dom-serialize/index.js",
+      "node_modules/ent/encode.js": "./node_modules/ent/encode.js",
+      "node_modules/ent/reversed.json": "./node_modules/ent/reversed.json",
+      "multi src/app.js": 0,
+      "node_modules/extend/index.js": "./node_modules/extend/index.js",
+      "node_modules/punycode/punycode.js": "./node_modules/punycode/punycode.js",
+      "node_modules/style-loader/lib/addStyles.js": "./node_modules/style-loader/lib/addStyles.js",
+      "node_modules/style-loader/lib/urls.js": "./node_modules/style-loader/lib/urls.js",
+      "node_modules/void-elements/index.js": "./node_modules/void-elements/index.js",
+      "node_modules/webpack/buildin/global.js": "./node_modules/webpack/buildin/global.js",
+      "node_modules/webpack/buildin/module.js": "./node_modules/webpack/buildin/module.js",
+      "node_modules/babel-loader/lib/index.js??ref--1!src/app.js": "./src/app.js",
+      "node_modules/babel-loader/lib/index.js??ref--1!src/components/Navbar/Navbar.js": "./src/components/Navbar/Navbar.js",
+      "node_modules/extract-text-webpack-plugin/dist/loader.js??ref--2-0!node_modules/style-loader/index.js!node_modules/css-loader/index.js??ref--2-2!node_modules/postcss-loader/lib/index.js??ref--2-3!node_modules/fast-sass-loader/lib/index.js!src/components/Navbar/Navbar.scss": "./src/components/Navbar/Navbar.scss",
+      "node_modules/babel-loader/lib/index.js??ref--1!src/components/PageLayout/PageLayout.js": "./src/components/PageLayout/PageLayout.js",
+      "node_modules/extract-text-webpack-plugin/dist/loader.js??ref--2-0!node_modules/style-loader/index.js!node_modules/css-loader/index.js??ref--2-2!node_modules/postcss-loader/lib/index.js??ref--2-3!node_modules/fast-sass-loader/lib/index.js!src/components/PageLayout/PageLayout.scss": "./src/components/PageLayout/PageLayout.scss",
+      "node_modules/babel-loader/lib/index.js??ref--1!src/pages/HomePage/HomePage.js": "./src/pages/HomePage/HomePage.js",
+      "node_modules/extract-text-webpack-plugin/dist/loader.js??ref--2-0!node_modules/style-loader/index.js!node_modules/css-loader/index.js??ref--2-2!node_modules/postcss-loader/lib/index.js??ref--2-3!node_modules/fast-sass-loader/lib/index.js!src/pages/HomePage/HomePage.scss": "./src/pages/HomePage/HomePage.scss"
+    },
+    "usedIds": {
+      "0": 0,
+      "./node_modules/css-loader/index.js?{\"modules\":true,\"localIdentName\":\"[name]__[local]\"}!./node_modules/postcss-loader/lib/index.js?{}!./node_modules/fast-sass-loader/lib/index.js!./src/components/Navbar/Navbar.scss": "./node_modules/css-loader/index.js?{\"modules\":true,\"localIdentName\":\"[name]__[local]\"}!./node_modules/postcss-loader/lib/index.js?{}!./node_modules/fast-sass-loader/lib/index.js!./src/components/Navbar/Navbar.scss",
+      "./node_modules/css-loader/index.js?{\"modules\":true,\"localIdentName\":\"[name]__[local]\"}!./node_modules/postcss-loader/lib/index.js?{}!./node_modules/fast-sass-loader/lib/index.js!./src/components/PageLayout/PageLayout.scss": "./node_modules/css-loader/index.js?{\"modules\":true,\"localIdentName\":\"[name]__[local]\"}!./node_modules/postcss-loader/lib/index.js?{}!./node_modules/fast-sass-loader/lib/index.js!./src/components/PageLayout/PageLayout.scss",
+      "./node_modules/css-loader/index.js?{\"modules\":true,\"localIdentName\":\"[name]__[local]\"}!./node_modules/postcss-loader/lib/index.js?{}!./node_modules/fast-sass-loader/lib/index.js!./src/pages/HomePage/HomePage.scss": "./node_modules/css-loader/index.js?{\"modules\":true,\"localIdentName\":\"[name]__[local]\"}!./node_modules/postcss-loader/lib/index.js?{}!./node_modules/fast-sass-loader/lib/index.js!./src/pages/HomePage/HomePage.scss",
+      "./node_modules/css-loader/lib/css-base.js": "./node_modules/css-loader/lib/css-base.js",
+      "./node_modules/custom-event/index.js": "./node_modules/custom-event/index.js",
+      "./node_modules/dom-serialize/index.js": "./node_modules/dom-serialize/index.js",
+      "./node_modules/ent/encode.js": "./node_modules/ent/encode.js",
+      "./node_modules/ent/reversed.json": "./node_modules/ent/reversed.json",
+      "./node_modules/extend/index.js": "./node_modules/extend/index.js",
+      "./node_modules/punycode/punycode.js": "./node_modules/punycode/punycode.js",
+      "./node_modules/style-loader/lib/addStyles.js": "./node_modules/style-loader/lib/addStyles.js",
+      "./node_modules/style-loader/lib/urls.js": "./node_modules/style-loader/lib/urls.js",
+      "./node_modules/void-elements/index.js": "./node_modules/void-elements/index.js",
+      "./node_modules/webpack/buildin/global.js": "./node_modules/webpack/buildin/global.js",
+      "./node_modules/webpack/buildin/module.js": "./node_modules/webpack/buildin/module.js",
+      "./src/app.js": "./src/app.js",
+      "./src/components/Navbar/Navbar.js": "./src/components/Navbar/Navbar.js",
+      "./src/components/Navbar/Navbar.scss": "./src/components/Navbar/Navbar.scss",
+      "./src/components/PageLayout/PageLayout.js": "./src/components/PageLayout/PageLayout.js",
+      "./src/components/PageLayout/PageLayout.scss": "./src/components/PageLayout/PageLayout.scss",
+      "./src/pages/HomePage/HomePage.js": "./src/pages/HomePage/HomePage.js",
+      "./src/pages/HomePage/HomePage.scss": "./src/pages/HomePage/HomePage.scss"
+    }
+  },
+  "chunks": {
+    "byName": {
+      "vendor": 0,
+      "app": 1,
+      "manifest": 2
+    },
+    "byBlocks": {},
+    "usedIds": {
+      "0": 0,
+      "1": 1,
+      "2": 2
+    }
+  }
+}

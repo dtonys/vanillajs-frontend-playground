@@ -4,16 +4,17 @@ const express = require('express');
 
 
 const app = express();
+const PORT = process.env.PORT || 3000;
 
 if ( process.env.NODE_ENV !== 'production' ) {
   // Dev and hot middleware for development
   const webpack = require('webpack');
   const webpackDevMiddleware = require('webpack-dev-middleware');
   const webpackHotMiddleware = require('webpack-hot-middleware');
-  const webpackConfig = require('./webpack.config.js')('development');
+  const webpackConfig = require('./webpack/webpack.config.js')('development');
   const webpackCompiler = webpack(webpackConfig);
 
-  // HACK(@dtonys): Fix for needless recompilations
+  // HACK(@dtonys): Fix for repeated recompiles in dev mode
   // https://github.com/webpack/watchpack/issues/25#issuecomment-319292564
   const timefix = 11000;
   webpackCompiler.plugin('watch-run', (watching, callback) => {
@@ -48,6 +49,6 @@ if ( process.env.NODE_ENV === 'production' ) {
   });
 }
 
-app.listen(3000, () => {
-  console.log('Server listening on port 3000!\n');
+app.listen(PORT, () => {
+  console.log(`Server listening on port ${PORT} !\n`);
 });

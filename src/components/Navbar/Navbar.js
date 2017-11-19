@@ -40,8 +40,3 @@ class Navbar {
 }
 
 export default Navbar;
-
-// hot reload css explicitely
-if ( module.hot ) {
-  module.hot.accept('./Navbar.scss');
-}

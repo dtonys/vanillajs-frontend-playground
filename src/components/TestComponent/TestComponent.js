@@ -33,6 +33,6 @@ class TestComponent {
 export default TestComponent;
 
 // hot reload css explicitely
-if ( module.hot ) {
-  module.hot.accept('./TestComponent.css');
-}
+// if ( module.hot ) {
+//   module.hot.accept('./TestComponent.css');
+// }

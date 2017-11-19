@@ -24,15 +24,10 @@ class HomePage {
   }
 
   setupEvents() {
-    this.container.addEventListener('click', (event) => {
-      console.log('HomePage Clicked');
-    });
+    // this.container.addEventListener('click', (event) => {
+    //   console.log('HomePage Clicked');
+    // });
   }
 }
 
 export default HomePage;
-
-// hot reload css explicitely
-if ( module.hot ) {
-  module.hot.accept('./HomePage.scss');
-}
