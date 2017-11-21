@@ -1,7 +1,7 @@
 @import "~styles/includes.scss";
 
 .layout {
-  background: #DDD;
+  background: white;
 }
 
 .navbar {
@@ -11,7 +11,7 @@
   right: 0;
   height: $navHeight;
   border-bottom: solid black 2px;
-  background: $gray-E;
+  background: white;
   padding: 10px;
   display: flex;
   align-items: center;
