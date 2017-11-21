@@ -1,8 +1,6 @@
-@mixin black-border {
-  border: solid black 1px;
-}
+@import "~styles/includes.scss";
 
-@mixin page-wrapper {
+.page__wrapper {
   max-width: $contentWidth;
   margin: auto;
   margin-top: 20px;
@@ -11,4 +9,8 @@
   padding-right: 10px;
   border-left: solid black 1px;
   border-right: solid black 1px;
+}
+
+.page__header {
+  text-align: center;
 }

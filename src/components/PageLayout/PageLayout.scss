@@ -1,21 +1,31 @@
-$navHeight: 60px;
+@import "~styles/includes.scss";
 
 .layout {
   background: #DDD;
 }
 
 .navbar {
-  position: absolute;
-  top: 0;
-  right: 0;
+  position: fixed;
+  z-index: 2;
   left: 0;
-  height: $navHeight
+  right: 0;
+  height: $navHeight;
+  border-bottom: solid black 2px;
+  background: $gray-E;
+  padding: 10px;
+  display: flex;
+  align-items: center;
 }
 
 .content {
-  position: absolute;
-  top: $navHeight;
-  right: 0;
-  left: 0;
-  bottom: 0;
+  z-index: 1;
+  // position: absolute;
+  // top: $navHeight;
+  // right: 0;
+  // left: 0;
+  // bottom: 0;
+  // overflow-y: auto;
+  // overflow-x: hidden;
+  padding: 10px;
+  padding-top: $navHeight;
 }

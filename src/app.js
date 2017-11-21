@@ -1,27 +1,38 @@
+import './helpers/history';
 import PageLayout from './components/PageLayout/PageLayout';
-import HomePage from './pages/HomePage/HomePage';
-// import domSerialize from 'dom-serialize';
+import {
+  onPathChange,
+  getCurrentPageFromPath,
+} from 'helpers/router';
 
 
 const rootNode = document.getElementById('root');
 let layout = null;
 
-function bootstrap() {
+const renderPageAndLayout = () => {
+  const pageComponent = getCurrentPageFromPath();
   layout = new PageLayout({
-    Page: HomePage,
+    Page: pageComponent,
     container: rootNode,
   });
-  layout.renderToDOM();
-}
+};
 
-bootstrap();
+const switchPage = () => {
+  const pageComponent = getCurrentPageFromPath();
+  layout.switchPage(pageComponent);
+};
+
+onPathChange( switchPage );
+renderPageAndLayout();
 
 // Global handler, causes
 if ( module.hot ) {
   module.hot.accept([
-    './pages/HomePage/HomePage',
+    // includes all page components
+    'helpers/router',
+    // include all layout components
     './components/PageLayout/PageLayout',
   ], () => {
-    bootstrap();
+    renderPageAndLayout();
   });
 }

@@ -19,6 +19,7 @@ class PageLayout {
       },
     };
     this.state = {};
+    this.renderToDOM();
   }
 
   render() {
@@ -34,6 +35,17 @@ class PageLayout {
         </div>
       </div>
     `;
+  }
+
+  switchPage( Page ) {
+    this.components.page = {
+      containerClass: styles.content,
+      component: new Page(),
+    };
+    const componentContainer = this.container.querySelector(`.${this.components.page.containerClass}`);
+    this.components.page.component.setContainer(componentContainer);
+    this.components.page.component.renderToDOM();
+    this.components.page.component.setupEvents();
   }
 
   setupChildren() {

@@ -1,4 +1,5 @@
-import styles from './HomePage.scss';
+import pageStyles from 'pages/pageStyles.scss';
+import { setupLinksOnHrefChildren } from 'helpers/router';
 
 
 class HomePage {
@@ -13,8 +14,23 @@ class HomePage {
 
   render() {
     return `
-      <div class="${styles.homePage}" >
-        <div> HomePage </div>
+      <div class="${pageStyles.page__wrapper}" >
+        <h1 class="${pageStyles.page__header}" > HomePage </h1>
+        <h3> Title </h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Distinctio veniam qui magnam, nisi blanditiis quaerat aliquid illum est ipsa tempore,
+            rerum eius, excepturi ratione alias aliquam consequuntur numquam officiis in?</p>
+        <hr />
+        <h3> Title </h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Distinctio veniam qui magnam, nisi blanditiis quaerat aliquid illum est ipsa tempore,
+            rerum eius, excepturi ratione alias aliquam consequuntur numquam officiis in?</p>
+        <hr />
+        <h3> Title </h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Distinctio veniam qui magnam, nisi blanditiis quaerat aliquid illum est ipsa tempore,
+            rerum eius, excepturi ratione alias aliquam consequuntur numquam officiis in?</p>
+        <hr />
       </div>
     `;
   }
@@ -24,9 +40,7 @@ class HomePage {
   }
 
   setupEvents() {
-    // this.container.addEventListener('click', (event) => {
-    //   console.log('HomePage Clicked');
-    // });
+    setupLinksOnHrefChildren(this.container);
   }
 }
 

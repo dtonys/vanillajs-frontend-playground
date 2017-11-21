@@ -24,6 +24,7 @@ const PATHS = {
 
 const commonConfig = webpackMerge([
   {
+    target: 'web',
     output: {
       path: PATHS.publicDist,
       filename: '[name].js',
@@ -50,11 +51,11 @@ const commonConfig = webpackMerge([
 
 const productionConfig = webpackMerge([
   {
-    performance: {
-      hints: 'warning', // 'error' or false are valid too
-      maxEntrypointSize: 100000, // in bytes
-      maxAssetSize: 450000, // in bytes
-    },
+    // performance: {
+    //   hints: 'warning', // 'error' or false are valid too
+    //   maxEntrypointSize: 100000, // in bytes
+    //   maxAssetSize: 450000, // in bytes
+    // },
     output: {
       publicPath: '/dist/',
       chunkFilename: '[name].[chunkhash].js',
@@ -62,6 +63,7 @@ const productionConfig = webpackMerge([
     },
     entry: {
       app: [
+        'babel-polyfill',
         path.join( PATHS.src, 'app.js' ),
       ],
     },
@@ -132,6 +134,7 @@ const developmentConfig = webpackMerge([
     },
     entry: {
       app: [
+        'babel-polyfill',
         'webpack-hot-middleware/client?path=/__webpack_hmr',
         path.join( PATHS.src, 'app.js' ),
       ],
@@ -144,7 +147,7 @@ const developmentConfig = webpackMerge([
     include: PATHS.src,
     cacheDirectory: PATHS.webpackCache,
   }),
-  parts.generateSourceMaps({ type: 'cheap-module-eval-source-map' }),
+  parts.generateSourceMaps({ type: 'eval' }),
   parts.loadSCSS({
     cssModules: true,
   }),
