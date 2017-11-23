@@ -1,14 +1,12 @@
+import Component from 'helpers/Component';
+
 import pageStyles from 'pages/pageStyles.scss';
 
 
-class NotFoundPage {
+class NotFoundPage extends Component {
   constructor() {
-    this.container = null;
+    super();
     this.state = {};
-  }
-
-  setContainer( container ) {
-    this.container = container;
   }
 
   render() {
@@ -17,13 +15,6 @@ class NotFoundPage {
         <h1 class="${pageStyles.page__header}" > NotFoundPage </h1>
       </div>
     `;
-  }
-
-  renderToDOM() {
-    this.container.innerHTML = this.render();
-  }
-
-  setupEvents() {
   }
 }
 

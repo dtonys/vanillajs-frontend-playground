@@ -9,12 +9,18 @@ import {
 const rootNode = document.getElementById('root');
 let layout = null;
 
+// renderToString();
+
 const renderPageAndLayout = () => {
   const pageComponent = getCurrentPageFromPath();
-  layout = new PageLayout({
-    Page: pageComponent,
-    container: rootNode,
-  });
+
+  // Initialize objects
+  layout = new PageLayout({ Page: pageComponent });
+  // Rendering phase
+  const htmlString = layout.renderToString();
+  rootNode.innerHTML = htmlString;
+  // Hydration phase
+  layout.hydrate();
 };
 
 const switchPage = () => {

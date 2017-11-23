@@ -1,5 +1,18 @@
 @import "~styles/includes.scss";
 
+.navbar__container {
+  position: fixed;
+  z-index: 2;
+  left: 0;
+  right: 0;
+  height: $navHeight;
+  border-bottom: solid black 2px;
+  background: white;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+
 .navbar__content {
   width: 100%;
   max-width: $contentWidth;

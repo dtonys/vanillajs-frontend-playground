@@ -1,14 +1,13 @@
+import Component from 'helpers/Component';
+
 import pageStyles from 'pages/pageStyles.scss';
 import allElements from 'pages/htmlTemplates/allElements';
 
-class FormsPage {
-  constructor() {
-    this.container = null;
-    this.state = {};
-  }
 
-  setContainer( container ) {
-    this.container = container;
+class FormsPage extends Component {
+  constructor() {
+    super();
+    this.state = {};
   }
 
   render() {
@@ -18,13 +17,6 @@ class FormsPage {
         ${allElements()}
       </div>
     `;
-  }
-
-  renderToDOM() {
-    this.container.innerHTML = this.render();
-  }
-
-  setupEvents() {
   }
 }
 

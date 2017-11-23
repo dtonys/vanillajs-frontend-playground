@@ -1,15 +1,14 @@
+import Component from 'helpers/Component';
+
 import pageStyles from 'pages/pageStyles.scss';
 import { setupLinksOnHrefChildren } from 'helpers/router';
 
 
-class HomePage {
-  constructor() {
-    this.container = null;
-    this.state = {};
-  }
+class HomePage extends Component {
 
-  setContainer( container ) {
-    this.container = container;
+  constructor() {
+    super();
+    this.state = {};
   }
 
   render() {
@@ -31,12 +30,23 @@ class HomePage {
             Distinctio veniam qui magnam, nisi blanditiis quaerat aliquid illum est ipsa tempore,
             rerum eius, excepturi ratione alias aliquam consequuntur numquam officiis in?</p>
         <hr />
+        <h3> Title </h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Distinctio veniam qui magnam, nisi blanditiis quaerat aliquid illum est ipsa tempore,
+            rerum eius, excepturi ratione alias aliquam consequuntur numquam officiis in?</p>
+        <hr />
+        <h3> Title </h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Distinctio veniam qui magnam, nisi blanditiis quaerat aliquid illum est ipsa tempore,
+            rerum eius, excepturi ratione alias aliquam consequuntur numquam officiis in?</p>
+        <hr />
+        <h3> Title </h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Distinctio veniam qui magnam, nisi blanditiis quaerat aliquid illum est ipsa tempore,
+            rerum eius, excepturi ratione alias aliquam consequuntur numquam officiis in?</p>
+        <hr />
       </div>
     `;
-  }
-
-  renderToDOM() {
-    this.container.innerHTML = this.render();
   }
 
   setupEvents() {

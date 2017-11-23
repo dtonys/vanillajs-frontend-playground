@@ -4,18 +4,18 @@
   background: white;
 }
 
-.navbar {
-  position: fixed;
-  z-index: 2;
-  left: 0;
-  right: 0;
-  height: $navHeight;
-  border-bottom: solid black 2px;
-  background: white;
-  padding: 10px;
-  display: flex;
-  align-items: center;
-}
+// .navbar {
+//   position: fixed;
+//   z-index: 2;
+//   left: 0;
+//   right: 0;
+//   height: $navHeight;
+//   border-bottom: solid black 2px;
+//   background: white;
+//   padding: 10px;
+//   display: flex;
+//   align-items: center;
+// }
 
 .content {
   z-index: 1;

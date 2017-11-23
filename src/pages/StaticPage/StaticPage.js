@@ -1,3 +1,5 @@
+import Component from 'helpers/Component';
+
 import pageStyles from 'pages/pageStyles.scss';
 import history from 'helpers/history';
 import allElements from 'pages/htmlTemplates/allElements';
@@ -7,15 +9,11 @@ const pathNameToTemplateMap = {
   '/static': allElements,
 };
 
-class StaticPage {
+class StaticPage extends Component {
   constructor() {
-    this.container = null;
+    super();
     this.templateFn = pathNameToTemplateMap[history.location.pathname];
     this.state = {};
-  }
-
-  setContainer( container ) {
-    this.container = container;
   }
 
   render() {
@@ -24,10 +22,6 @@ class StaticPage {
         ${this.templateFn()}
       </div>
     `;
-  }
-
-  renderToDOM() {
-    this.container.innerHTML = this.render();
   }
 }
 
