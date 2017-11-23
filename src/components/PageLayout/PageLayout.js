@@ -8,14 +8,13 @@ class PageLayout extends Component {
 
   constructor({ Page }) {
     super();
+    const page = new Page();
+    this.visitedPages = {
+      [Page.name]: page,
+    };
     this.children = {
-      page: new Page(),
+      page: page,
       navbar: new Navbar(),
-      // listItems: [
-      //   new ListItem(),
-      //   new ListItem(),
-      //   new ListItem(),
-      // ],
     };
 
     this.state = {
@@ -54,8 +53,17 @@ class PageLayout extends Component {
   }
 
   switchPage( NewPage ) {
-    this.children.page = new NewPage();
-    this.updateDom();
+    const pageContainer = this.children.page.container;
+    if ( this.children.page.cleanUp ) this.children.page.cleanUp();
+
+    // Only create new page if existing page is not available
+    if ( this.visitedPages[NewPage.name] ) {
+      this.children.page = this.visitedPages[NewPage.name];
+    }
+    else {
+      this.children.page = new NewPage();
+    }
+    this.children.page.replaceDom( pageContainer );
     this.children.page.hydrate();
   }
 }

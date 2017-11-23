@@ -4,6 +4,7 @@ import FormsPage from 'pages/FormsPage/FormsPage';
 import SearchTVPage from 'pages/SearchTVPage/SearchTVPage';
 import NotFoundPage from 'pages/NotFoundPage/NotFoundPage';
 import StaticPage from 'pages/StaticPage/StaticPage';
+import TodoPage from 'pages/TodoPage/TodoPage';
 
 
 // https://github.com/ReactTraining/history#listening
@@ -17,6 +18,7 @@ const pathToComponentMap = {
   '/form': FormsPage,
   '/search-tv': SearchTVPage,
   '/static': StaticPage,
+  '/todo': TodoPage,
 };
 
 /**

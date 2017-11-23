@@ -63,9 +63,15 @@ class Component {
     if ( this.postHydrate ) this.postHydrate();
   }
 
-  updateDom() {
-    morphdom(this.container, this.renderToString());
+  replaceDom( container ) {
+    const div = document.createElement('div');
+    div.innerHTML = this.renderToString();
+    container.parentNode.replaceChild( div.firstChild, container );
+    if ( this.postUpdate ) this.postUpdate();
+  }
 
+  updateDom( useInnerHTML ) {
+    morphdom(this.container, this.renderToString());
     // post update hook
     if ( this.postUpdate ) this.postUpdate();
   }

@@ -19,8 +19,8 @@ class Navbar extends Component {
         <div class="${styles.navbar__content} clearfix" >
           <div class="${styles.navbar__left}">
             <a href="/">Home </a> &nbsp;
-            <a href="/form">Form </a> &nbsp;
-            <a href="/search-tv">SearchTV </a> &nbsp;
+            <a href="/form">Form</a> &nbsp;
+            <a href="/todo">TODO</a> &nbsp;
           </div>
           <div class="${styles.navbar__center}">
             <a class="${styles.navbar__centerLink}" href="/" >
