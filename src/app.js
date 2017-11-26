@@ -2,7 +2,7 @@ import './helpers/history';
 import PageLayout from './components/PageLayout/PageLayout';
 import {
   onPathChange,
-  getCurrentPageFromPath,
+  getRouteData,
 } from 'helpers/router';
 
 
@@ -12,10 +12,11 @@ let layout = null;
 // renderToString();
 
 const renderPageAndLayout = () => {
-  const pageComponent = getCurrentPageFromPath();
+  const { page } = getRouteData();
 
   // Initialize objects
-  layout = new PageLayout({ Page: pageComponent });
+  layout = new PageLayout({ Page: page });
+
   // Rendering phase
   const htmlString = layout.renderToString();
   rootNode.innerHTML = htmlString;
@@ -24,8 +25,8 @@ const renderPageAndLayout = () => {
 };
 
 const switchPage = () => {
-  const pageComponent = getCurrentPageFromPath();
-  layout.switchPage(pageComponent);
+  const { page } = getRouteData();
+  layout.switchPage(page);
 };
 
 onPathChange( switchPage );

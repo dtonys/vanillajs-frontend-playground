@@ -73,29 +73,30 @@ class TodoPage extends Component {
     }
   }
 
-  removeTodo = ( event ) => {
-    const todoIndex = parseInt(event.target.closest('.todoItem').getAttribute('data-index'), 10);
+  removeTodo = ( event, target ) => {
+    const todoIndex = parseInt(target.closest('.todoItem').getAttribute('data-index'), 10);
     this.state.todos = this.state.todos.filter((todo, index) => (index !== todoIndex));
+    this.updateDom();
   }
 
-  markTodoDone = ( event ) => {
-    const todoIndex = parseInt(event.target.closest('.todoItem').getAttribute('data-index'), 10);
+  markTodoDone = ( event, target ) => {
+    const todoIndex = parseInt(target.closest('.todoItem').getAttribute('data-index'), 10);
     this.state.todos[todoIndex].done = !this.state.todos[todoIndex].done;
+    this.updateDom();
   }
 
-  onInputChange = ( event ) => {
-    const value = event.target.value;
-    const name = event.target.getAttribute('name');
+  onInputChange = ( event, target ) => {
+    const value = target.value;
+    const name = target.getAttribute('name');
     this.state.form = {
       ...this.state.form,
       [name]: value,
     };
+    console.log(this.state.form);
   }
 
-  onContainerClick = (event) => {
-    if ( event.target.matches('.submitTodo') ) this.addTodo(event);
-    if ( event.target.matches('.removeItem') ) this.removeTodo(event);
-    if ( event.target.matches('.markItem') ) this.markTodoDone(event);
+  onInputBlur = ( event, target ) => {
+    console.log('onInputBlur');
   }
 
   onContainerInput = (event) => {
@@ -103,8 +104,22 @@ class TodoPage extends Component {
   }
 
   setupEvents() {
-    this.container.addEventListener('click', this.onContainerClick);
-    this.container.addEventListener('input', this.onContainerInput);
+    // assume events must be added
+    console.log('TodoPage setupEvents');
+    /* eslint-disable quote-props */
+    this.createEvent('click', {
+      'submitTodo': this.addTodo,
+      'removeItem': this.removeTodo,
+    });
+    this.createEvent('click', {
+      'markItem': this.markTodoDone,
+    });
+    this.createEvent('input', {
+      'submitTodoText': this.onInputChange,
+    });
+    this.createEvent('blur', {
+      'submitTodoText': this.onInputBlur,
+    });
   }
 
 }

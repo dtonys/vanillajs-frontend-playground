@@ -28,8 +28,7 @@ class Navbar extends Component {
             </a>
           </div>
           <div class="${styles.navbar__right}">
-            <button> Btn1 </button>
-            <button> Btn2 </button>
+            <button href="/users" > Users </button>
           </div>
         </div>
       </div>
