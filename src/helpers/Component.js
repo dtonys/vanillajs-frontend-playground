@@ -62,7 +62,6 @@ class Component {
   hydrate() {
     // hydrate component
     this.container = document.querySelector(`.${this.containerId}`);
-    if ( this.setupEvents ) this.setupEvents();
 
     // hydrate component's children, recursively
     if ( this.children ) callFunctionOnObject('hydrate')(this.children);
@@ -89,30 +88,36 @@ class Component {
     if ( this.postUpdate ) this.postUpdate();
   }
 
-
   /**
    * Event handling
    */
   onEvent( eventType, useCapture ) {
     const { classToAction } = this.eventMap[eventType];
-    const classInstance = this;
+    const _this = this;
+
 
     const cssMatch = Object.keys(classToAction)
-      .map((_class) => (`.${_class}`))
       .join(', ');
 
     // Find the matched classes and execute corresponding action handlers
     function executeActions( target, event ) {
       Object.keys(classToAction).forEach(( classKey ) => {
-        if ( target.matches(`.${classKey}`) ) {
+        if ( target.matches(classKey) ) {
           const action = classToAction[classKey];
-          action.call( classInstance, event, target );
+          // Call the event handler function, passing extra argument `target` as the
+          // DOM node which matched the css search.
+          action.call( _this, event, target );
         }
       });
     }
 
     // eslint-disable-next-line
     return function ( event ) {
+      // Implement event delegation by walking up the tree from the event.target,
+      // Looking for any css matches, as defined in
+      //   `createEvent('', {cssClass1: fn_1, cssClass2: fn_2})`
+      // CSS modules classnames should ensure that separate components do not share
+      // any class names.
       for (
         let target = event.target;
         target && target !== event.currentTarget;
@@ -139,7 +144,7 @@ class Component {
         listener: null,
       };
     }
-    // merge / overwrite with new entries
+    // merge new events in if called second time
     else {
       this.eventMap[eventType].classToAction = {
         ...this.eventMap[eventType].classToAction,
@@ -159,10 +164,14 @@ class Component {
     const useCapture = (useCaptureEvents.indexOf(eventType) !== -1);
 
     // remove the previous event handler for this eventType
+    // ( avoids more than one event being set )
     this.container.removeEventListener(eventType, this.eventMap[eventType].listener);
-    // generate a new onEvent handler, attach to container
+    // generate a new onEvent handler, attach to container,
+    // processing newly merged events.
     const onEvent = this.onEvent( eventType, useCapture );
+    // pointer to listener function ref, so it can be removed.
     this.eventMap[eventType].listener = onEvent;
+    // Only one event added per event type, all events are delegated.
     this.container.addEventListener(eventType, onEvent, useCapture);
   }
 

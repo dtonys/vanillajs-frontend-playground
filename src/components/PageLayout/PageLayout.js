@@ -1,3 +1,4 @@
+import history from 'helpers/history';
 import Component from 'helpers/Component';
 
 import styles from './PageLayout.scss';
@@ -22,31 +23,35 @@ class PageLayout extends Component {
 
   }
 
-  incrementCounter = (/* event */) => {
-    this.state = {
-      ...this.state,
-      count: this.state.count + 1,
-    };
-    // this.updateDom();
+  link = (event, target) => {
+    // Allow ctr + click (mac) to open a new tab for <a> tags
+    if ( event.defaultPrevented || event.metaKey || event.ctrlKey ) {
+      return;
+    }
+    event.preventDefault();
+    const href = target.getAttribute('href');
+    const fullReload = target.hasAttribute('fullReload');
+    if ( fullReload ) {
+      window.location.href = href;
+      return;
+    }
+    history.push(href);
   }
 
-  setupEvents() {
-    this.container
-      .addEventListener('click', this.incrementCounter, false);
-  }
-
-  // setup "mount" logic here
   postHydrate() {
-    console.log('postHydrate');
+    // setup all links
+    this.createEvent('click', {
+      '[href]': this.link,
+    });
   }
 
   render() {
-    console.log('PageLayout render');
+    const { navbar, page } = this.children;
     return `
       <div class="${styles.layout}" >
-        ${this.children.navbar.renderToString()}
+        ${navbar.renderToString()}
         <div class="${styles.content}" >
-          ${this.children.page.renderToString()}
+          ${page.renderToString()}
         </div>
       </div>
     `;

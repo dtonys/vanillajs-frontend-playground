@@ -9,7 +9,6 @@ import {
 const rootNode = document.getElementById('root');
 let layout = null;
 
-// renderToString();
 
 const renderPageAndLayout = () => {
   const { page } = getRouteData();

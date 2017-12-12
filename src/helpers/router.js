@@ -27,15 +27,6 @@ const patternToComponentMap = {
   '/users/:id': TodoPage,
 };
 
-// create regex for all defined paths
-const pathToRegexMap = {};
-// Object.keys( pathToComponentMap ).forEach(( path ) => {
-//   const regexStr = path.replace(/:\w+/, '\\w+');
-//   const pathRegex = new RegExp(regexStr, 'g');
-//   pathToRegexMap[path] = pathRegex;
-// });
-
-
 /**
  * Match with params, returns data to be accepted by child component
  * Example: matchPath('/users/:id', '/users/12'); // => { id: '12' }
@@ -58,9 +49,9 @@ export function matchPath( pattern, pathname ) {
   // generateRE for pattern
   let patternRegexStr = pattern.replace(/:\w+/g, '(\\w+)');
   patternRegexStr = `^${patternRegexStr}\/$`;
-  const patternRegex = new RegExp(patternRegexStr, 'g');
+  let patternRegex = new RegExp(patternRegexStr, 'g');
 
-  // Exit if no match
+  // Exit if no pattern match
   if ( !patternRegex.test(pathname) ) return false;
 
   // get `:matches` in pattern, to get param keys
@@ -73,10 +64,9 @@ export function matchPath( pattern, pathname ) {
   const paramKeys = paramMatches.map(( paramKey ) => ( paramKey.slice(1) ));
 
   // Extract regex parenthesized substring matches to get param values
-  let result = patternRegex.exec(pathname);
-  if ( !result ) {
-    result = patternRegex.exec(pathname);
-  }
+  // Reset regex state for exec
+  patternRegex = new RegExp(patternRegexStr, 'g');
+  const result = patternRegex.exec(pathname);
   if ( result ) {
     if ( paramKeys.length ) params = {};
     paramKeys.forEach(( key, index ) => {
@@ -153,38 +143,3 @@ history.listen((location /* , action */) => {
     onPathChangeListeners.forEach( (listener) => listener() );
   }
 });
-
-/**
- * Link helpers
- */
-function setupLinkOnDOMNode( node, fullReload ) {
-  node.addEventListener('click', (event) => {
-    // Allow ctr + click (mac) to open a new tab for <a> tags
-    if ( event.defaultPrevented || event.metaKey || event.ctrlKey ) {
-      return;
-    }
-    event.preventDefault();
-    const href = event.currentTarget.getAttribute('href');
-    if ( fullReload ) {
-      window.location.href = href;
-      return;
-    }
-    history.push(href);
-  });
-}
-
-export function setupLinks( nodes, fullReload ) {
-  let nodeArray = nodes;
-  if ( !Array.isArray(nodes) ) {
-    nodeArray = [ nodes ];
-  }
-  nodeArray.forEach(( node ) => {
-    setupLinkOnDOMNode(node, fullReload);
-  });
-}
-
-export function setupLinksOnHrefChildren( containerNode ) {
-  setupLinks([
-    ...containerNode.querySelectorAll('[href]'),
-  ]);
-}

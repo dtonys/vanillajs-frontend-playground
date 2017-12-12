@@ -1,7 +1,6 @@
 import Component from 'helpers/Component';
 
 import pageStyles from 'pages/pageStyles.scss';
-import { setupLinksOnHrefChildren } from 'helpers/router';
 
 
 class HomePage extends Component {
@@ -48,10 +47,6 @@ class HomePage extends Component {
         <hr />
       </div>
     `;
-  }
-
-  setupEvents() {
-    setupLinksOnHrefChildren(this.container);
   }
 }
 

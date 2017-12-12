@@ -23,7 +23,7 @@ class TestComponent {
     this.container.innerHTML = this.render();
   }
 
-  setupEvents() {
+  postHydrate() {
     this.container.addEventListener('click', (event) => {
       console.log('Clicked');
     });

@@ -1,6 +1,5 @@
 import styles from './UsersListPage.scss';
 import Component from 'helpers/Component';
-import { setupLinksOnHrefChildren } from 'helpers/router';
 import pageStyles from 'pages/pageStyles.scss';
 
 
@@ -22,8 +21,8 @@ const UserItem = ({
         <hr />
       </div>
     </a>
-  `
-}
+  `;
+};
 
 class UsersListPage extends Component {
 
@@ -50,10 +49,6 @@ class UsersListPage extends Component {
         }
       </div>
     `;
-  }
-
-  setupEvents() {
-    setupLinksOnHrefChildren(this.container);
   }
 
 }

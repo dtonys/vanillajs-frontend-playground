@@ -92,7 +92,6 @@ class TodoPage extends Component {
       ...this.state.form,
       [name]: value,
     };
-    console.log(this.state.form);
   }
 
   onInputBlur = ( event, target ) => {
@@ -103,22 +102,22 @@ class TodoPage extends Component {
     if ( event.target.matches('.submitTodoText') ) this.onInputChange(event);
   }
 
-  setupEvents() {
+  postHydrate() {
     // assume events must be added
     console.log('TodoPage setupEvents');
     /* eslint-disable quote-props */
     this.createEvent('click', {
-      'submitTodo': this.addTodo,
-      'removeItem': this.removeTodo,
+      '.submitTodo': this.addTodo,
+      '.removeItem': this.removeTodo,
     });
     this.createEvent('click', {
-      'markItem': this.markTodoDone,
+      '.markItem': this.markTodoDone,
     });
     this.createEvent('input', {
-      'submitTodoText': this.onInputChange,
+      '.submitTodoText': this.onInputChange,
     });
     this.createEvent('blur', {
-      'submitTodoText': this.onInputBlur,
+      '.submitTodoText': this.onInputBlur,
     });
   }
 
